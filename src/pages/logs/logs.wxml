@@ -1,0 +1,6 @@
+<view class="container log-list">
+  <custom-nav > 日志 </custom-nav>
+  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
+    <text class="log-item">索引{{index + 1}}. {{log.date}}</text>
+  </block>
+</view>

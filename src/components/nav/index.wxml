@@ -1,0 +1,13 @@
+<!--components/nav/nav.wxml-->
+<view class="nav_wrapper">
+        <view class="nav-outer" style="height:{{topHeight}};background-color:{{bgColor}};">
+            <view style="height:{{statusBarHeight}};" ></view>
+            <view style="height:{{navHeight}};margin-top:{{diff}};"  class="nav-ct ">
+                <view class="arrow_outer" bind:tap="goBack" wx:if="{{!hideBack}}">
+                    <image class="arrow_left" src="./assets/arrow_left.png"></image>
+                </view>
+                <slot ></slot>
+            </view>
+        </view>
+        <view style="height:{{topHeight}};"></view>
+</view>

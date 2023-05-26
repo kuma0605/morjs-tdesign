@@ -1,0 +1,31 @@
+.nav_wrapper {
+  width: 750rpx;
+}
+.nav-outer {
+  z-index: 999;
+  position: fixed;
+  width: 750rpx;
+}
+.nav-ct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 32rpx;
+}
+
+.arrow_outer {
+  position: absolute;
+  left: 18rpx;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+}
+
+.arrow_left {
+  width: 48rpx;
+  height: 48rpx;
+}
