@@ -1,6 +1,8 @@
 {
   "navigationStyle":"custom",
   "usingComponents": {
-    "custom-nav": "/wxcomponents/nav/index"
+    "custom-nav": "/wxcomponents/nav/index",
+    "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",
+    "t-drawer": "/miniprogram_npm/tdesign-miniprogram/drawer/drawer"
   }
 }

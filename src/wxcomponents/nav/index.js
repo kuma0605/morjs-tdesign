@@ -31,6 +31,7 @@ Component({
         topHeight: topHeight + "px",
         diff: diff + "px"
       });
+      wx.setStorageSync("StatusNavHeight",topHeight);
     } catch (e) {
       // Do something when catch error
       console.log(e.message);

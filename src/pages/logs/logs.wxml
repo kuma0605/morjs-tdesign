@@ -1,6 +1,15 @@
 <view class="container log-list">
-  <custom-nav > 日志 </custom-nav>
-  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
-    <text class="log-item">索引{{index + 1}}. {{log.date}}</text>
-  </block>
+<custom-nav > 日志 </custom-nav>
+  <view>
+    <t-button variant="outline" bind:tap="openDrawerBase" block size="large" theme="primary">基础抽屉</t-button>
+
+<t-drawer
+  style="padding-top:{{StatusNavHeight}};"
+  visible="{{visible}}"
+  placement="{{placement}}"
+  items="{{sidebar}}"
+  bind:overlay-click="overlayClick"
+  bind:item-click="itemClick"
+></t-drawer>
+  </view>
 </view>
