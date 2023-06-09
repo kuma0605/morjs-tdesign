@@ -18,10 +18,12 @@ export default class Image extends SuperComponent {
     };
     observers: {
         src(): void;
+        'width, height'(width: any, height: any): void;
     };
     methods: {
         onLoaded(e: any): void;
         onLoadError(e: any): void;
+        calcSize(width: any, height: any): void;
         update(): void;
     };
 }

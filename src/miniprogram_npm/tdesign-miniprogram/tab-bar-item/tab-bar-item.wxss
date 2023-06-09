@@ -25,6 +25,9 @@
   bottom: 0;
   transform: scale(1.5);
 }
+:host {
+  flex: 1;
+}
 .t-tab-bar-item {
   flex: 1;
   height: var(--td-tab-bar-height, 80rpx);

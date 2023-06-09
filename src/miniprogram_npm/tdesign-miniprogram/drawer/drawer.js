@@ -36,9 +36,7 @@ let Drawer = class Drawer extends SuperComponent {
             },
             itemClick(detail) {
                 const { index, item } = detail.currentTarget.dataset;
-                this.triggerEvent('item-click', {
-                    sibarItem: { index: index, item: item },
-                });
+                this.triggerEvent('item-click', { index, item });
             },
         };
     }

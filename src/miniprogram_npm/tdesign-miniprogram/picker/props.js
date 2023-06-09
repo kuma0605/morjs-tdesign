@@ -7,10 +7,6 @@ const props = {
         type: null,
         value: true,
     },
-    columns: {
-        type: null,
-        value: [],
-    },
     confirmBtn: {
         type: null,
         value: true,
@@ -19,8 +15,8 @@ const props = {
         type: Boolean,
         value: true,
     },
-    renderLabel: {
-        type: null,
+    keys: {
+        type: Object,
     },
     title: {
         type: String,
@@ -36,6 +32,10 @@ const props = {
     visible: {
         type: Boolean,
         value: false,
+    },
+    popupProps: {
+        type: Object,
+        value: {},
     },
 };
 export default props;

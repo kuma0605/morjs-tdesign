@@ -1,6 +1,8 @@
 {
   "navigationStyle":"custom",
   "usingComponents": {
-    "custom-nav": "/wxcomponents/nav/index"
+    "custom-nav": "/wxcomponents/nav/index",
+    "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
+    "t-tab-bar-item": "tdesign-miniprogram/tab-bar-item/tab-bar-item"
   }
 }

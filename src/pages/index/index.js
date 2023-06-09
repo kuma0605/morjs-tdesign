@@ -2,6 +2,13 @@ import { wPage } from '@morjs/core'
 
 wPage({
   data: {
+    value: 'label_1',
+    list: [
+      { value: 'label_1', label: '首页', icon: 'home' },
+      { value: 'label_2', label: '应用', icon: 'app' },
+      { value: 'label_3', label: '聊天', icon: 'chat' },
+      { value: 'label_4', label: '我的', icon: 'user' },
+    ],
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
@@ -37,12 +44,17 @@ wPage({
       }
     })
   },
-  getUserInfo(e: any) {
+  getUserInfo(e) {
     // 不推荐使用 getUserInfo 获取用户信息，预计自2021年4月13日起，getUserInfo 将不再弹出弹窗，并直接返回匿名的用户个人信息
     console.log(e)
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+  onChange(e) {
+    this.setData({
+      value: e.detail.value,
+    });
+  },
 })

@@ -29,17 +29,8 @@ let Image = class Image extends SuperComponent {
         this.lifetimes = {
             attached() {
                 const { width, height } = this.data;
-                let innerStyle = '';
                 this.update();
-                if (width) {
-                    innerStyle += `width: ${addUnit(width)};`;
-                }
-                if (height) {
-                    innerStyle += `height: ${addUnit(height)};`;
-                }
-                this.setData({
-                    innerStyle,
-                });
+                this.calcSize(width, height);
             },
         };
         this.observers = {
@@ -47,6 +38,9 @@ let Image = class Image extends SuperComponent {
                 if (this.preSrc === this.properties.src)
                     return;
                 this.update();
+            },
+            'width, height'(width, height) {
+                this.calcSize(width, height);
             },
         };
         this.methods = {
@@ -77,6 +71,18 @@ let Image = class Image extends SuperComponent {
                     isFailed: true,
                 });
                 this.triggerEvent('error', e.detail);
+            },
+            calcSize(width, height) {
+                let innerStyle = '';
+                if (width) {
+                    innerStyle += `width: ${addUnit(width)};`;
+                }
+                if (height) {
+                    innerStyle += `height: ${addUnit(height)};`;
+                }
+                this.setData({
+                    innerStyle,
+                });
             },
             update() {
                 const { src } = this.properties;

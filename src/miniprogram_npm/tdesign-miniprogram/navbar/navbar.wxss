@@ -59,7 +59,7 @@
   padding-right: var(--td-navbar-right, 190rpx);
   padding-top: var(--td-navbar-padding-top, 40rpx);
   color: var(--td-navbar-color, var(--td-font-gray-1, rgba(0, 0, 0, 0.9)));
-  background-color: var(--td-navbar-bg-color, var(--td-bg-color-container, var(--td-font-white-1, #ffffff)));
+  background: var(--td-navbar-bg-color, var(--td-bg-color-container, var(--td-font-white-1, #ffffff)));
   display: flex;
   align-items: center;
 }
@@ -83,6 +83,7 @@
 .t-navbar__capsule::before {
   content: '';
   position: absolute;
+  z-index: -1;
   top: 0;
   left: 0;
   width: 200%;

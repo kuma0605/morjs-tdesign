@@ -7,20 +7,16 @@
     "compile": "mor compile --production"
   },
   "keywords": [],
-  
   "author": "dylan <825880445@qq.com>",
-  
-  
   "repository": {
     "type": "git",
     "url": "http://58.221.22.166:10038/htit/mor-mini.git"
   },
-  
   "license": "",
   "dependencies": {
-    "@morjs/core": "*"
+    "@morjs/core": "^1.0.53"
   },
   "devDependencies": {
-    "@morjs/cli": "*"
+    "@morjs/cli": "^1.0.53"
   }
 }

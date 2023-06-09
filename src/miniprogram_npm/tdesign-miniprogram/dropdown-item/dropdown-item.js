@@ -36,6 +36,8 @@ let DropdownMenuItem = class DropdownMenuItem extends SuperComponent {
             overlay: menuProps.showOverlay.value,
             labelAlias: 'label',
             valueAlias: 'value',
+            computedLabel: '',
+            firstCheckedValue: '',
         };
         this.relations = {
             '../dropdown-menu/dropdown-menu': {
@@ -72,11 +74,11 @@ let DropdownMenuItem = class DropdownMenuItem extends SuperComponent {
                 const target = options.find((item) => item[valueAlias] === v);
                 if (target) {
                     this.setData({
-                        label: target[labelAlias],
+                        computedLabel: target[labelAlias],
                     });
                 }
             },
-            label() {
+            'label, computedLabel'() {
                 var _a;
                 (_a = this.$parent) === null || _a === void 0 ? void 0 : _a.getAllItems();
             },
@@ -118,6 +120,12 @@ let DropdownMenuItem = class DropdownMenuItem extends SuperComponent {
                 if (!this.data.multiple) {
                     this.closeDropdown();
                 }
+                else {
+                    const firstChecked = this.data.options.find((item) => value.includes(item.value));
+                    if (firstChecked) {
+                        this.data.firstCheckedValue = firstChecked.value;
+                    }
+                }
             },
             handleMaskClick() {
                 var _a;
@@ -132,6 +140,7 @@ let DropdownMenuItem = class DropdownMenuItem extends SuperComponent {
             handleConfirm() {
                 this._trigger('confirm', { value: this.data.value });
                 this.closeDropdown();
+                this.setData({ firstCheckedValue: this.data.firstCheckedValue });
             },
             onLeaved() {
                 this.setData({ wrapperVisible: false });
